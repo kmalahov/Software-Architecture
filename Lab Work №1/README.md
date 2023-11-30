@@ -17,33 +17,8 @@
   - Система должна предлагать набор вопросов,соответсвующий следующим типам: _выбор ответа, вопрос на ДА/НЕТ, открытый вопрос, вопрос на сопастовленние и вопрос на правильный порядок_. 
 
 **3. Диаграмма вариантов использования:** 
-　
+![telegram-cloud-photo-size-2-5422533444451291808-x](https://github.com/kmalahov/Software-Architecture/assets/55401680/f93924ea-b8e6-455c-83a5-3fd0ba1b6f1b)
 
-```PlantUML
- 
-@startuml
-left to right direction
-
-actor Учитель as User
-
-rectangle "Система" as System {
-  usecase "Аутентификация" as Auth
-  usecase "Создание презентации" as QPres
-  usecase "Генерация вопросов" as QGen
-  usecase "Авторизация через внешние сервисы" as ExternalAuth
-}
-
-User --> Auth
-QGen --> (Diaclass)
-Auth --> (Diaclass)
-User --> ExternalAuth : Авторизация через внешние сервисы
-ExternalAuth --> Auth : Успешная аутентификация
-Auth --> QPres
-QPres --> QGen
-
-@enduml
-```
-![diagramma paps](https://github.com/kmalahov/Software-Architecture/assets/55401680/9b65a7a4-420a-4feb-a9ae-c8ffe8bbf92f)
 
 **4.Перечень сделанных предположений:**
 + Предположение 1:
